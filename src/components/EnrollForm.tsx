@@ -67,6 +67,20 @@ export default function EnrollForm({ id }: EnrollFormProps) {
 
       if (error) throw error;
 
+      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send_enrollment_email`;
+      await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim().toLowerCase(),
+          learning_interest: formData.learningInterest
+        })
+      });
+
       setSubmitStatus('success');
       setFormData({ name: '', email: '', learningInterest: '' });
 
