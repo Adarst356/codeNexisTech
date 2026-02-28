@@ -30,8 +30,8 @@ const projects = [
     icon: Briefcase
   },
   {
-    title: 'Recharge Expense Tracker',
-    description: 'Smart expense tracking app that logs and categorizes recharge transactions, provides spending analytics, and helps users manage their mobile recharge expenses.',
+    title: 'Recharge Application',
+    description: 'A digital recharge management platform that enables users to perform mobile and utility recharges, track transaction history, and monitor spending with a secure and user-friendly interface.',
     icon: Rocket
   }
 ];
@@ -157,59 +157,6 @@ export default function About() {
                     </div>
                   );
                 })}
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-slate-700 pt-20 bg-slate-900/30 border border-slate-700 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">Add Your Own Domain</h3>
-            <div className="max-w-3xl mx-auto space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <h4 className="font-bold text-white flex items-center gap-2">
-                    <span className="w-6 h-6 flex items-center justify-center bg-blue-500 text-white text-sm rounded-full">1</span>
-                    Get a Domain
-                  </h4>
-                  <p className="text-gray-400 text-sm pl-8">
-                    Buy a domain from popular registrars like GoDaddy, Namecheap, Hostinger, or Google Domains. Search for your preferred name and purchase it.
-                  </p>
-                </div>
-
-                <div className="space-y-2">
-                  <h4 className="font-bold text-white flex items-center gap-2">
-                    <span className="w-6 h-6 flex items-center justify-center bg-blue-500 text-white text-sm rounded-full">2</span>
-                    Update DNS Records
-                  </h4>
-                  <p className="text-gray-400 text-sm pl-8">
-                    Go to your domain registrar's DNS settings and add nameservers or DNS records pointing to your hosting provider.
-                  </p>
-                </div>
-
-                <div className="space-y-2">
-                  <h4 className="font-bold text-white flex items-center gap-2">
-                    <span className="w-6 h-6 flex items-center justify-center bg-blue-500 text-white text-sm rounded-full">3</span>
-                    Deploy Your Site
-                  </h4>
-                  <p className="text-gray-400 text-sm pl-8">
-                    Deploy this website to Vercel, Netlify, or any hosting service. Get your hosting provider's nameservers or deployment URL.
-                  </p>
-                </div>
-
-                <div className="space-y-2">
-                  <h4 className="font-bold text-white flex items-center gap-2">
-                    <span className="w-6 h-6 flex items-center justify-center bg-blue-500 text-white text-sm rounded-full">4</span>
-                    Enable SSL
-                  </h4>
-                  <p className="text-gray-400 text-sm pl-8">
-                    Most hosting platforms provide free SSL certificates automatically. Enable HTTPS for secure connections to your site.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
-                <p className="text-blue-300 text-sm">
-                  <span className="font-bold">Pro Tip:</span> Services like Vercel and Netlify make it super easy - just connect your domain and they handle SSL automatically!
-                </p>
               </div>
             </div>
           </div>
