@@ -41,22 +41,24 @@ export default function EnrollForm({ id }: EnrollFormProps) {
     return true;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setErrorMessage('');
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setErrorMessage('');
 
-    if (!validateForm()) {
-      setSubmitStatus('error');
-      return;
-    }
+  if (!validateForm()) {
+    setSubmitStatus('error');
+    return;
+  }
 
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-      setTimeout(() => {
+  setIsSubmitting(true);
+  setSubmitStatus('idle');
+
+  setTimeout(() => {
     setSubmitStatus('success');
     setFormData({ name: '', email: '', learningInterest: '' });
     setIsSubmitting(false);
   }, 1000);
+};
 
 
   return (
@@ -176,5 +178,4 @@ export default function EnrollForm({ id }: EnrollFormProps) {
       </div>
     </section>
   );
-}
 }
