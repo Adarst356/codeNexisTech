@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
-import { supabase } from '../lib/supabase';
 
 interface EnrollFormProps {
   id?: string;
@@ -53,48 +52,12 @@ export default function EnrollForm({ id }: EnrollFormProps) {
 
     setIsSubmitting(true);
     setSubmitStatus('idle');
-
-    try {
-      const { error } = await supabase
-        .from('enrollments')
-        .insert([
-          {
-            name: formData.name.trim(),
-            email: formData.email.trim().toLowerCase(),
-            learning_interest: formData.learningInterest
-          }
-        ]);
-
-      if (error) throw error;
-
-      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send_enrollment_email`;
-      await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-        },
-        body: JSON.stringify({
-          name: formData.name.trim(),
-          email: formData.email.trim().toLowerCase(),
-          learning_interest: formData.learningInterest
-        })
-      });
-
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', learningInterest: '' });
-
       setTimeout(() => {
-        setSubmitStatus('idle');
-      }, 5000);
-    } catch (error) {
-      console.error('Error submitting enrollment:', error);
-      setSubmitStatus('error');
-      setErrorMessage('Something went wrong. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    setSubmitStatus('success');
+    setFormData({ name: '', email: '', learningInterest: '' });
+    setIsSubmitting(false);
+  }, 1000);
+
 
   return (
     <section id={id} className="py-20 bg-slate-900">
@@ -213,4 +176,5 @@ export default function EnrollForm({ id }: EnrollFormProps) {
       </div>
     </section>
   );
+}
 }
